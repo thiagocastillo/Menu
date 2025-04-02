@@ -9,7 +9,7 @@ public class WaiterTests
         const string name = "John Doe";
         Waiter waiter = new Waiter(name);
 
-        Assert.That(waiter.Name, Is.EqualTo(name));
+        Assert.That(waiter.NameWaiter, Is.EqualTo(name));
     }
 
     [Test]
@@ -19,7 +19,7 @@ public class WaiterTests
         Table table = new Table(1);
         waiter.AssignTable(table);
         Dish dish = new Dish("Salad", 5.99, true);
-        table.Ocupy();
+        table.Occupy();
         
         waiter.TakeOrder(table, dish);
         
