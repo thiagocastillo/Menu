@@ -10,15 +10,12 @@ public class Menu
 {
     private ArrayList dishes = new ArrayList();
 
-    public void AddDish(name)
+    public void AddDish(Dish dish)
     {
-        Console.Write("Ingrese el nombre del platillo: ");
-        string name = Console.ReadLine();
+      
+        dishes.Add(dish);
 
-        Dish newDish = new Dish(name);
-        dishes.Add(newDish);
-
-        Console.WriteLine($"Platillo '{name}' agregado al menú.");
+        Console.WriteLine($"Platillo '{dish.Name}' agregado al menú.");
     }
 
     public void RemoveDish()
@@ -41,9 +38,9 @@ public class Menu
 
     public Dish GetDishByName(string name)
     {
-        foreach (var Dish in dishes)
+        foreach (Dish dish in dishes)
         {
-            if (dish.name.Contains(name, StringComparison.OrdinalIgnoreCase))
+            if (dish.Name.Contains(name, StringComparison.OrdinalIgnoreCase))
             {
                 return dish;
             }
