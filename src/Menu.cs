@@ -18,21 +18,18 @@ public class Menu
         Console.WriteLine($"Platillo '{dish.Name}' agregado al menú.");
     }
 
-    public void RemoveDish()
+    public void RemoveDish(Dish dish)
     {
-        Console.Write("Ingrese el nombre del platillo a eliminar: ");
-        string name = Console.ReadLine();
-
-        Dish dishToRemove = GetDishByName(name);
-
-        if (dishToRemove != null)
+        
+        if (dish == null)
         {
-            dishes.Remove(dishToRemove);
-            Console.WriteLine($"Platillo '{name}' eliminado del menú.");
+            
+            Console.WriteLine($"No se encontró el platillo '{dish.Name}' en el menú.");
         }
         else
-        {
-            Console.WriteLine($"No se encontró el platillo '{name}' en el menú.");
+        {        
+            dishes.Remove(dish);
+            Console.WriteLine($"Platillo '{dish.Name}' eliminado del menú.");
         }
     }
 
