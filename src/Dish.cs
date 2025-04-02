@@ -9,10 +9,10 @@ public class Dish
     public double Price;
     public bool IsVegetarian;
 
-    public Dish()
+    public Dish(string name, double price, bool isVegetarian)
     {
-        Name = "Napolitana";
-        Price = 499.99;
-        IsVegetarian = false;
+        this.Name = name;
+        this.Price = price;
+        this.IsVegetarian = isVegetarian;
     }
 }
