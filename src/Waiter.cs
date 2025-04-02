@@ -44,7 +44,7 @@ public class Waiter
         if (assignedTables.Contains(table))
         {
             table.AddToOrder(dish);
-            Console.WriteLine("Mezas asignadas al mozo con exito.");
+            Console.WriteLine("Mesas asignadas al mozo con exito.");
         }
         else
         {
