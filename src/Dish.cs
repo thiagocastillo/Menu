@@ -5,5 +5,14 @@ namespace Ucu.Poo.Restaurant;
 /// </summary>
 public class Dish
 {
-    
+    public string Name;
+    public double Price;
+    public bool IsVegetarian;
+
+    public Dish()
+    {
+        Name = "Napolitana";
+        Price = 499.99;
+        IsVegetarian = false;
+    }
 }
