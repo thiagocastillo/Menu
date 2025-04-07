@@ -36,6 +36,8 @@ public class Waiter
         if (!assignedTables.Contains(table))
         {
             assignedTables.Add(table);
+            Console.WriteLine("Mesa asignadas al mozo con exito.");
+
         }
     }
     
@@ -43,8 +45,11 @@ public class Waiter
     {
         if (assignedTables.Contains(table))
         {
-            table.AddToOrder(dish);
-            Console.WriteLine("Mesas asignadas al mozo con exito.");
+            Order order = new Order(false);
+            order.AddToOrder(dish);
+            order.AssignToTable(table);
+            Console.WriteLine("Platillo agregado con exito.");
+
         }
         else
         {

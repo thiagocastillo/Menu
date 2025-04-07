@@ -1,51 +1,52 @@
+using System.Collections.Generic;
+
 namespace Ucu.Poo.Restaurant;
 
-using System.Collections;
-
 /// <summary>
-/// Representa una mesa en el restaurante.
+/// Represents a table in the restaurant.
 /// </summary>
 public class Table
 {
     private int number;
     private bool isOccupied;
-    private ArrayList order = new ArrayList();
+    private List<Order> orders;
 
     public int Number
     {
         get { return number; }
         set { number = value; }
     }
-    public ArrayList Order
-    {
-        get { return order; }
-    }
+
     public bool IsOccupied
     {
         get { return isOccupied; }
         set { isOccupied = value; }
     }
+
+    public List<Order> Orders
+    {
+        get { return orders; }
+    }
+
     public void Occupy()
     {
         isOccupied = true;
     }
+
     public void Free()
     {
         isOccupied = false;
-        order.Clear();
+        orders.Clear();
     }
 
-    public void AddToOrder(Dish dish)
+    public void AddOrder(Order order)
     {
-        order.Add(dish);
+        orders.Add(order);
     }
-    public bool HasOrders()
-    {
-        return this.order.Count > 0;
-    }
+
     public Table(int number)
     {
-        this.Number = number;
-        
+        this.number = number;
+        this.orders = new List<Order>();
     }
 }
